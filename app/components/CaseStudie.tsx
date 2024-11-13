@@ -23,7 +23,12 @@ const CaseStudie = () => {
                 <p className="opacity-50 text-[1vw] m-0 p-0">{item.cat}</p>
                 <h2 className="text-[2vw] m-0 p-0">{item.title}</h2>
               </div>
-              <ArrowUpRight size={"3vw"} />
+              <div className="group flex flex-row gap-4 items-center">
+                <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Bekijken
+                </p>
+                <ArrowUpRight size={"3vw"} />
+              </div>
             </div>
           </div>
         ))}
