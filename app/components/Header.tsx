@@ -4,13 +4,13 @@ import Logo from "../assets/Logo.svg";
 
 const Header = () => {
   return (
-    <div className="w-dvw h-dvh">
+    <div className="w-full h-dvh">
       <Image
         src={Logo}
         alt="logo"
         className="absolute right-20 bottom-10 w-1/2 h-auto max-h-[90dvh] opacity-30"
       />
-      <div className="w-full h-[90%] flex items-end pl-5">
+      <div className="w-full h-[90%] flex items-end pl-8">
         <div className="flex flex-row-reverse gap-[10vw]">
           <h1 className="h-fit w-fit text-[8vw] text-9xl">
             Design
