@@ -28,7 +28,7 @@ const Review = () => {
 
   return (
     <div className="w-full h-fit px-8 pb-8 flex flex-col gap-10">
-      <Carousel className="w-full">
+      <Carousel className="w-full" opts={{ loop: true }}>
         <div className="flex flex-row justify-between">
           <h1 className="w-fit text-[3vw]">Klanten reviews</h1>
           <div className="flex flex-row gap-4">
