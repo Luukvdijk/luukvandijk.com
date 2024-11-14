@@ -14,7 +14,7 @@ const FormerCustomers = () => {
   ];
 
   return (
-    <div className="w-full h-dvh px-8">
+    <div className="w-full h-fit px-8 pb-8">
       <h1 className="text-[3vw] w-fit">Voormalige klanten</h1>
       <div className="w-full h-fit">
         {formerCustomers.map((item) => {
