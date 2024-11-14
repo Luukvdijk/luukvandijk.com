@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import BuurbakHome from "../assets/BuurbakHome.png";
 
 const CaseStudie = () => {
@@ -12,7 +13,11 @@ const CaseStudie = () => {
       <h1 className="text-[3vw] w-fit mb-4 p-0 m-0">Case studie</h1>
       <div className="flex-1 flex justify-center items-center">
         {caseStudie.map((item) => (
-          <div key={item.title} className="flex flex-col gap-4">
+          <Link
+            href={"/buurbak"}
+            key={item.title}
+            className="flex flex-col gap-4"
+          >
             <Image
               src={item.img}
               alt="BuurBak home page"
@@ -30,7 +35,7 @@ const CaseStudie = () => {
                 <ArrowUpRight size={"3vw"} />
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
