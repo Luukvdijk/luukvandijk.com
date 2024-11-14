@@ -1,4 +1,5 @@
 import CaseStudie from "./components/CaseStudie";
+import Contact from "./components/Contact";
 import FormerCustomers from "./components/FormerCustomers";
 import Header from "./components/Header";
 import Review from "./components/Review";
@@ -12,6 +13,7 @@ export default function Home() {
       <Steps />
       <FormerCustomers />
       <Review />
+      <Contact />
     </div>
   );
 }
