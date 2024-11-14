@@ -1,6 +1,7 @@
 import CaseStudie from "./components/CaseStudie";
 import FormerCustomers from "./components/FormerCustomers";
 import Header from "./components/Header";
+import Review from "./components/Review";
 import Steps from "./components/Steps";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <CaseStudie />
       <Steps />
       <FormerCustomers />
+      <Review />
     </div>
   );
 }
