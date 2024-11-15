@@ -11,7 +11,7 @@ const CaseStudie = () => {
   return (
     <div className="w-full h-dvh flex flex-col px-8">
       <h1 className="text-[3vw] w-fit mb-4 p-0 m-0">Case studie</h1>
-      <div className="flex-1 flex justify-center items-center">
+      <div className="flex-1 flex max-h-[80vh] justify-center items-center">
         {caseStudie.map((item) => (
           <Link
             href={"/buurbak"}
