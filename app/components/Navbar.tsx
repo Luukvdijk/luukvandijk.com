@@ -1,11 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Logo from "../assets/LogoDark.svg";
 import { useScroll } from "./ScrollContext";
 
-const Navbar = () => {
+export default function Navbar() {
   const { scrollToSection, scrollToTop } = useScroll();
+  const pathname = usePathname();
+
+  const isHomePage = pathname === "/";
 
   const navmenu = [
     { name: "Case studie", id: "case-studie" },
@@ -15,24 +20,38 @@ const Navbar = () => {
     { name: "Contact", id: "contact" },
   ];
 
+  const handleNavClick = (id: string) => {
+    if (isHomePage) {
+      scrollToSection(id);
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center py-4">
       <div className="flex flex-row items-center gap-5 px-5 py-3 rounded-xl bg-nav-gradient backdrop-blur-lg">
-        <button onClick={scrollToTop} className="focus:outline-none">
+        <Link
+          href="/"
+          onClick={(e) => {
+            if (isHomePage) {
+              e.preventDefault();
+              scrollToTop();
+            }
+          }}
+          className="focus:outline-none"
+        >
           <Image src={Logo} alt="Home" className="w-10 h-auto" />
-        </button>
+        </Link>
         {navmenu.map((nav) => (
-          <button
+          <Link
             key={nav.name}
-            onClick={() => scrollToSection(nav.id)}
+            href={isHomePage ? `#${nav.id}` : `/#${nav.id}`}
+            onClick={() => handleNavClick(nav.id)}
             className="text-white hover:text-gray-300 transition-colors focus:outline-none"
           >
             {nav.name}
-          </button>
+          </Link>
         ))}
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
