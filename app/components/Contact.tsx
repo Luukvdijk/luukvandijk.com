@@ -79,7 +79,7 @@ export default function Contact() {
   return (
     <div className="w-full h-fit px-8">
       <h1 className="text-[3vw] w-fit mb-8">Vertel mij over jouw project</h1>
-      <div className="w-full h-[70vh] flex justify-center items-center">
+      <div className="w-full h-[90vh] flex justify-center items-center">
         <form
           className="flex flex-col w-full max-w-2xl h-fit gap-6"
           onSubmit={handleSubmit}
