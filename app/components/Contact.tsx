@@ -1,8 +1,8 @@
 "use client";
-
 import { Button } from "@/app/components/ui/button";
 import Input from "@/app/components/ui/input";
 import { useRef, useState } from "react";
+import { postEmail } from "../api/send/route";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -57,16 +57,15 @@ export default function Contact() {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (validateForm()) {
-      console.log("Form Data Summary:", formData);
-      // Here you would typically handle the form submission,
-      // such as sending the data to an API
+      const response = postEmail(formData);
+      console.warn(response);
     }
   };
 
   return (
-    <div className="w-full min-h-screen px-8">
+    <div className="w-full h-fit px-8">
       <h1 className="text-[3vw] w-fit mb-8">Vertel mij over jouw project</h1>
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full h-[70vh] flex justify-center items-center">
         <form
           className="flex flex-col w-full max-w-2xl h-fit gap-6"
           onSubmit={handleSubmit}
