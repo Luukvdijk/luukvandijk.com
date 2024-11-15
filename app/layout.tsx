@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 
@@ -18,7 +19,9 @@ export default function RootLayout({
         <Navbar />
       </nav>
       <body>{children}</body>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </html>
   );
 }
