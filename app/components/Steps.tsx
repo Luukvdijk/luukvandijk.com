@@ -29,10 +29,10 @@ const Steps = () => {
 
   return (
     <div className="w-full h-dvh flex flex-row flex-wrap justify-between items-center px-8">
-      <h1 className="text-[8vw] sm:text-[4vw] flex-1 min-w-96">
+      <h1 className="text-[8vw] sm:text-[4vw] flex-1 min-w-80 max-w-full">
         Deze stappen gaan we doorlopen om jouw website te maken
       </h1>
-      <div className="flex-1 min-w-96">
+      <div className="flex-1 min-w-80 max-w-full">
         <Accordion
           type="single"
           className="w-full"
