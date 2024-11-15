@@ -2,7 +2,6 @@
 import { Button } from "@/app/components/ui/button";
 import Input from "@/app/components/ui/input";
 import { useRef, useState } from "react";
-import { postEmail } from "../api/send/route";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -54,11 +53,26 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     if (validateForm()) {
-      const response = postEmail(formData);
-      console.warn(response);
+      try {
+        const response = await fetch("/api/send", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          console.log("Email sent successfully!");
+        } else {
+          console.error("Failed to send email");
+        }
+      } catch (error) {
+        console.error("Error sending email:", error);
+      }
     }
   };
 

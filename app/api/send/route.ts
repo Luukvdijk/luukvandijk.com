@@ -7,22 +7,28 @@ type FormData = {
   websiteGoal: string;
   keyFeatures: string;
   timeline: string;
-  extraInfo: string;
+  extraInfo?: string;
 };
 
 const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 
-export const postEmail = async (formData: FormData) => {
+export async function POST(request: Request) {
   try {
-    const response = await resend.emails.send({
+    const formData: FormData = await request.json();
+
+    const { data, error } = await resend.emails.send({
       from: "client@luukvandijk.com",
       to: "luukvandijk2003@gmail.com",
       subject: "new client",
       text: `Naam: ${formData.name}\n Email: ${formData.email}\n Doel website: ${formData.websiteGoal}\n Belangrijke functies: ${formData.keyFeatures}\n Tijdslijn: ${formData.timeline}\n Extra informatie: ${formData.extraInfo}\n`,
     });
 
-    return JSON.stringify(response);
+    if (error) {
+      return Response.json({ error }, { status: 500 });
+    }
+
+    return Response.json(data);
   } catch (error) {
-    return JSON.stringify(error);
+    return Response.json({ error }, { status: 500 });
   }
-};
+}
