@@ -28,10 +28,13 @@ const Review = () => {
 
   return (
     <div className="w-full h-fit px-8 pb-8 flex flex-col gap-10">
-      <Carousel className="w-full" opts={{ loop: true }}>
-        <div className="flex flex-row justify-between">
-          <h1 className="w-fit text-[3vw]">Klanten reviews</h1>
-          <div className="flex flex-row gap-4">
+      <Carousel
+        className="w-full flex flex-col items-center sm:block"
+        opts={{ loop: true }}
+      >
+        <div className="flex flex-col w-full sm:flex-row sm:justify-between">
+          <h1 className="w-fit text-[8vw] sm:text-[3vw]">Klanten reviews</h1>
+          <div className="hidden sm:flex flex-row gap-4">
             <CarouselPrevious />
             <CarouselNext />
           </div>
@@ -42,18 +45,26 @@ const Review = () => {
             <CarouselItem key={review.id}>
               <div className="p-1">
                 <div key={review.id} className="flex flex-col gap-4">
-                  <p className="text-[4vw]">
+                  <p className="text-[5vw] sm:text-[4vw]">
                     “<span className="opacity-50">{review.review}</span>”
                   </p>
                   <div className="flex flex-row gap-4">
                     {review.img ? (
-                      <Image src={review.img} alt="profiel foto" />
+                      <Image
+                        src={review.img}
+                        alt="profiel foto"
+                        className="size-[8vw] sm:size-[3.5vw]"
+                      />
                     ) : (
-                      <UserCircle size={"3.5vw"} />
+                      <UserCircle className="size-[10vw] sm:size-[3.5vw]" />
                     )}
                     <div className="flex flex-col">
-                      <p className="text-[1.5vw]">{review.name}</p>
-                      <p className="opacity-50">{review.place}</p>
+                      <p className="text-[4vw] sm:text-[1.5vw]">
+                        {review.name}
+                      </p>
+                      <p className="text-[3vw] sm:text-[1.5vw] opacity-50">
+                        {review.place}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -61,6 +72,11 @@ const Review = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
+
+        <div className="flex sm:hidden flex-row gap-4 pt-5 self-center">
+          <CarouselPrevious />
+          <CarouselNext />
+        </div>
       </Carousel>
     </div>
   );

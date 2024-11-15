@@ -27,8 +27,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center py-4">
-      <div className="flex flex-row items-center gap-5 px-5 py-3 rounded-xl bg-nav-gradient backdrop-blur-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center py-4 px-8">
+      <div className="flex flex-row justify-between items-center gap-5 px-5 py-3 rounded-xl bg-nav-gradient backdrop-blur-lg w-full sm:w-fit">
         <Link
           href="/"
           onClick={(e) => {
@@ -46,7 +46,9 @@ export default function Navbar() {
             key={nav.name}
             href={isHomePage ? `#${nav.id}` : `/#${nav.id}`}
             onClick={() => handleNavClick(nav.id)}
-            className="text-white hover:text-gray-300 transition-colors focus:outline-none"
+            className={`text-white hover:text-gray-300 transition-colors focus:outline-none sm:block ${
+              nav.name !== "Contact" && `hidden`
+            }`}
           >
             {nav.name}
           </Link>
