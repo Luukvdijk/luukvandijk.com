@@ -205,7 +205,7 @@ const CarouselPrevious = React.forwardRef<
       ref={ref}
       variant={variant}
       size={size}
-      className="p-4 bg-white opacity-50 w-fit h-fit rounded-full"
+      className="p-2 sm:p-4 bg-white opacity-50 w-fit h-fit rounded-full"
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
@@ -227,7 +227,7 @@ const CarouselNext = React.forwardRef<
       ref={ref}
       variant={variant}
       size={size}
-      className="p-4 bg-white opacity-50 w-fit h-fit rounded-full"
+      className="p-2 sm:p-4 bg-white opacity-50 w-fit h-fit rounded-full"
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}

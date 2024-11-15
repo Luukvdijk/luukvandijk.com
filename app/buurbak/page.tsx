@@ -50,15 +50,15 @@ const Buurbak = () => {
 
   return (
     <div className="w-full h-fit min-h-[100dvh] flex flex-col gap-10 items-center pt-24 px-8">
-      <h1 className="text-[2.5vw]">
+      <h1 className="text-[8vw] sm:text-[2.5vw]">
         Hoe ik <span className="text-[#398D89]">Buur</span>
         <span className="text-[#EE7B46]">Bak</span> heb gecreëerd en opgezet
       </h1>
       <div className="w-full flex flex-col gap-10">
-        <div className="flex flex-row justify-between ">
-          <div className="flex flex-col gap-8 w-1/3">
+        <div className="flex flex-col sm:flex-row justify-between gap-5 sm:gap-0">
+          <div className="flex flex-col gap-8 flex-1 sm:w-1/3 sm:flex-none">
             <div className="flex flex-col gap-1">
-              <h2 className="text-[1.8vw]">Bedrijf</h2>
+              <h2 className="text-[5vw] sm:text-[1.8vw]">Bedrijf</h2>
               {company.map((company) => (
                 <div key={company.id}>
                   <p className="opacity-50">{company.cat}</p>
@@ -70,7 +70,7 @@ const Buurbak = () => {
             </div>
 
             <div className="flex flex-col gap-1">
-              <h2 className="text-[1.8vw]">Tools</h2>
+              <h2 className="text-[5vw] sm:text-[1.8vw]">Tools</h2>
               {tools.map((tools) => (
                 <div key={tools.id}>
                   <p className="opacity-50">{tools.point1}</p>
@@ -84,7 +84,7 @@ const Buurbak = () => {
             </div>
 
             <div className="flex flex-col gap-1">
-              <h2 className="text-[1.8vw]">Omschrijving</h2>
+              <h2 className="text-[5vw] sm:text-[1.8vw]">Omschrijving</h2>
               {omschrijving.map((omschrijving) => (
                 <div key={omschrijving.id}>
                   <p className="opacity-50">{omschrijving.discription}</p>
@@ -93,7 +93,7 @@ const Buurbak = () => {
             </div>
 
             <div className="flex flex-col gap-1">
-              <h2 className="text-[1.8vw]">De uitdagingen</h2>
+              <h2 className="text-[5vw] sm:text-[1.8vw]">De uitdagingen</h2>
               {uitdagingen.map((uitdagingen) => (
                 <div key={uitdagingen.id}>
                   <p className="opacity-50">{uitdagingen.discription}</p>
@@ -107,7 +107,7 @@ const Buurbak = () => {
 
         <div>
           <div className="flex flex-col gap-1">
-            <h2 className="text-[1.8vw]">De oplossing</h2>
+            <h2 className="text-[5vw] sm:text-[1.8vw]">De oplossing</h2>
             {oplossing.map((oplossing) => (
               <div key={oplossing.id}>
                 <p className="opacity-50">{oplossing.discription}</p>

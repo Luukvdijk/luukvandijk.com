@@ -8,11 +8,11 @@ const Header = () => {
       <Image
         src={Logo}
         alt="logo"
-        className="absolute right-20 bottom-10 w-1/2 h-auto max-h-[90dvh] opacity-30"
+        className="absolute right-20 bottom-10 w-full sm:w-1/2 max-w-[70vw] h-full sm:h-auto max-h-[90dvh] opacity-30"
       />
       <div className="w-full h-[90%] flex items-end pl-8">
         <div className="flex flex-row-reverse gap-[10vw]">
-          <h1 className="h-fit w-fit text-[8vw] text-9xl">
+          <h1 className="h-fit w-fit text-[12vw] sm:text-[8vw] text-9xl">
             Design
             <br />
             Development
@@ -20,7 +20,7 @@ const Header = () => {
             Launch
             <br />
           </h1>
-          <div className="flex flex-col justify-between">
+          <div className="flex-col justify-between hidden sm:flex">
             <h2 className="h-fit w-fit text-[1.5vw]">
               Ontwerp
               <br />
