@@ -22,17 +22,17 @@ const Header = () => {
           </h1>
           <div className="flex-col justify-between hidden sm:flex">
             <h2 className="h-fit w-fit text-[1.5vw]">
-              Ontwerp
+              Creatief
               <br />
-              Schitterende
+              Gebruiksvriendelijk
               <br />
-              Website
+              Nauwkeurig
               <br />
-              Creëer
+              Oplossend
               <br />
-              Aantrekkelijk
+              Analytisch
               <br />
-              Merk
+              Kwaliteit
               <br />
             </h2>
             <ArrowDownRight size={"10vw"} />

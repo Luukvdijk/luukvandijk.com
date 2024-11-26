@@ -12,17 +12,19 @@ const Review = () => {
   const reviews = [
     {
       id: 1,
-      review: "Wajow tering goed. Ik zou je 10K doneren als extratje",
+      review:
+        "Het is heel fijn om met Luuk samen te werken. Hij is communicatief heel sterk waardoor hij in een zelfsturend/scrum team goed kan werken als front-end developer, designer, coach van andere jonge developers en scrum master. Hij weet hoe hij dingen goed kan opzetten en doet hier vooraf ook onderzoek naar. Hij kan erg goed samenwerken en is van grote waarde voor elk team. Daarnaast denkt Luuk ook heel fijn en proactief mee met alles wat te maken heeft met de opdracht waardoor hij mij ook regelmatig erg positief verrast heeft.",
       img: "",
-      name: "Lara Krul",
-      place: "CEO",
+      name: "Anja Wolters",
+      place: "Oprichter BuurBak",
     },
     {
       id: 2,
-      review: "Jezus maar 10k doe maar 20k doneren",
+      review:
+        "Het is heel fijn om met Luuk samen te werken. Hij is communicatief heel sterk waardoor hij in een zelfsturend/scrum team goed kan werken als front-end developer, designer, coach van andere jonge developers en scrum master. Hij weet hoe hij dingen goed kan opzetten en doet hier vooraf ook onderzoek naar. Hij kan erg goed samenwerken en is van grote waarde voor elk team. Daarnaast denkt Luuk ook heel fijn en proactief mee met alles wat te maken heeft met de opdracht waardoor hij mij ook regelmatig erg positief verrast heeft.",
       img: "",
-      name: "Pepijn Remmerswaal",
-      place: "CEO",
+      name: "Anja Wolters",
+      place: "Oprichter BuurBak",
     },
   ];
 
@@ -45,7 +47,7 @@ const Review = () => {
             <CarouselItem key={review.id}>
               <div className="p-1">
                 <div key={review.id} className="flex flex-col gap-4">
-                  <p className="text-[5vw] sm:text-[4vw]">
+                  <p className="text-[3vw] sm:text-[1.5vw]">
                     “<span className="opacity-50">{review.review}</span>”
                   </p>
                   <div className="flex flex-row gap-4">

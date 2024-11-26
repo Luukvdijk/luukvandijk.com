@@ -10,17 +10,17 @@ export default function Home() {
   return (
     <>
       <Header />
-      <ScrollableSection id="case-studie">
-        <CaseStudie />
-      </ScrollableSection>
       <ScrollableSection id="stappen">
         <Steps />
       </ScrollableSection>
-      <ScrollableSection id="klanten">
-        <FormerCustomers />
+      <ScrollableSection id="stappencase-studie">
+        <CaseStudie />
       </ScrollableSection>
       <ScrollableSection id="reviews">
         <Review />
+      </ScrollableSection>
+      <ScrollableSection id="klanten">
+        <FormerCustomers />
       </ScrollableSection>
       <ScrollableSection id="contact">
         <Contact />
