@@ -39,7 +39,7 @@ const CaseStudie = () => {
                 </h2>
               </div>
               <div className="group flex flex-row gap-4 items-center">
-                <p className="opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+                <p className="opacity-50 sm:group-hover:opacity-100 transition-opacity duration-300">
                   Bekijken
                 </p>
                 <ArrowUpRight className="size-[15vw] sm:size-[3vw]" />

@@ -81,9 +81,9 @@ export default function Contact() {
       <h1 className="text-[8vw] sm:text-[3vw] w-fit sm:mb-8">
         Vertel mij over jouw project
       </h1>
-      <div className="w-full h-[80vh] sm:h-[90vh] flex justify-center items-center">
+      <div className="w-full h-[80vh] flex justify-center items-center">
         <form
-          className="flex flex-col w-full max-w-2xl h-fit gap-6"
+          className="flex flex-col w-full max-w-[80vw] h-fit gap-6"
           onSubmit={handleSubmit}
           noValidate
         >
@@ -160,10 +160,14 @@ export default function Contact() {
               onChange={handleChange}
             />
           </div>
-          <div className="w-full h-fit flex justify-center mt-4">
+          <div className="w-full h-fit flex flex-col justify-center items-center mt-4">
             <Button type="submit" className="text-[6vw] sm:text-[2vw]">
               Bespreek project
             </Button>
+            <p className="opacity-50 text-[2vw] sm:text-[1.2vw]">
+              Het eerste gesprek is kosteloos en vrijblijvend om jouw ideeën te
+              bespreken.
+            </p>
           </div>
         </form>
       </div>

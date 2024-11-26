@@ -20,14 +20,14 @@ const FormerCustomers = () => {
         {formerCustomers.map((item) => {
           return (
             <div key={item.id} className="w-full h-fit flex flex-col gap-4">
-              <div className="w-full h-fit flex flex-col sm:flex-row justify-between">
+              <div className="w-full h-fit flex flex-col sm:flex-row justify-between gap-2">
                 <p className="opacity-50 text-[5vw] sm:text-[2vw] min-w-fit">
                   {item.number}
                 </p>
                 <Image
                   src={item.img}
                   alt={item.title}
-                  className="aspect-video w-auto h-[20vh] sm:h-[40vh] object-cover"
+                  className="aspect-video w-[90vw] h-auto sm:h-auto sm:w-[40vw] object-cover"
                 />
                 <div className="max-w-full sm:max-w-[50vw]">
                   <h2 className="text-[5vw] sm:text-[2vw]">{item.title}</h2>
