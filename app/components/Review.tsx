@@ -21,9 +21,9 @@ const Review = () => {
     {
       id: 2,
       review:
-        "Het is heel fijn om met Luuk samen te werken. Hij is communicatief heel sterk waardoor hij in een zelfsturend/scrum team goed kan werken als front-end developer, designer, coach van andere jonge developers en scrum master. Hij weet hoe hij dingen goed kan opzetten en doet hier vooraf ook onderzoek naar. Hij kan erg goed samenwerken en is van grote waarde voor elk team. Daarnaast denkt Luuk ook heel fijn en proactief mee met alles wat te maken heeft met de opdracht waardoor hij mij ook regelmatig erg positief verrast heeft.",
+        "Als eigenaar van BuurBak kan ik zeggen dat ik enorm tevreden ben met de samenwerking van Luuk. zij heeft hij een echte PO rol op zich en neemt hij het team onder zijn hoede. Hij communiceert met mij wanneer er problemen zijn en op evaluatie en planning momenten. Hierdoor gaan we goed vooruit en blijft de development goed lopen.",
       img: "",
-      name: "Anja Wolters",
+      name: "Michiel Hazel",
       place: "Oprichter BuurBak",
     },
   ];
