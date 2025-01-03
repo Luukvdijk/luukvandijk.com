@@ -21,7 +21,7 @@ const Review = () => {
     {
       id: 2,
       review:
-        "Als eigenaar van BuurBak kan ik zeggen dat ik enorm tevreden ben met de samenwerking van Luuk. zij heeft hij een echte PO rol op zich en neemt hij het team onder zijn hoede. Hij communiceert met mij wanneer er problemen zijn en op evaluatie en planning momenten. Hierdoor gaan we goed vooruit en blijft de development goed lopen.",
+        "Als mede-eigenaar van BuurBak kan ik zeggen dat ik enorm tevreden ben met de samenwerking met Luuk. Zo heeft hij een echte Scrum Master rol op zich en neemt hij het team onder zijn hoede. Hij communiceert met mij wanneer er problemen zijn én op evaluatie en planning momenten. Hierdoor gaan we goed vooruit en blijft de development goed lopen.",
       img: "",
       name: "Michiel Hazel",
       place: "Oprichter BuurBak",
