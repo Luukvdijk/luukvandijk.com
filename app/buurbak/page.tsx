@@ -1,5 +1,14 @@
 import Image from "next/image";
 import HomePage from "../assets/BuurbakFullHomePage.png";
+import { constructMetadata } from "../lib/metadata";
+
+export const metadata = constructMetadata({
+  title: "Buurbak project | Webdevelopment & UX voor duurzame aanhangers",
+  description:
+    "Voor Buurbak ontwikkelde ik mee aan een platform waar buurtgenoten eenvoudig aanhangers kunnen huren. Ik was verantwoordelijk voor frontend development, UX, testen en de thematische herstructurering.",
+  keywords:
+    "Buurbak, webdevelopment, frontend, UX design, duurzame mobiliteit, aanhanger huren, case study, projectervaring, Luuk van Dijk, Next.js, app router",
+});
 
 const Buurbak = () => {
   const company = [
