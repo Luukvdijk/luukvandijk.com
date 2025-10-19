@@ -1,6 +1,15 @@
 import Image from "next/image";
+import BrandPersonality from "../assets/BrandPersonality.png";
 import HomePage from "../assets/BuurbakFullHomePage.png";
+import WebsiteFlow from "../assets/websiteFlow.png";
 import { constructMetadata } from "../lib/metadata";
+import {
+  buurbakCase,
+  company,
+  omschrijving,
+  tools,
+  uitdagingen,
+} from "./buurbak";
 
 export const metadata = constructMetadata({
   title: "Buurbak project | Webdevelopment & UX voor duurzame aanhangers",
@@ -11,61 +20,15 @@ export const metadata = constructMetadata({
 });
 
 const Buurbak = () => {
-  const company = [
-    {
-      id: 1,
-      cat: "Deel- en duurzame transportsector",
-      plaats: "Utrecht, Nederland",
-      employess: "6 werknemers",
-      founded: "Opgericht in 2023",
-    },
-  ];
-
-  const tools = [
-    {
-      id: 1,
-      point1: "Figma (Design)",
-      point2: "React (Development)",
-      point3: "NextJs (Development)",
-      point4: "Tailwind (Development)",
-      point5: "Zeroheight (Documentatie)",
-      point6: "Netlify (Hosting)",
-    },
-  ];
-
-  const omschrijving = [
-    {
-      id: 1,
-      discription:
-        "BuurBak is een platform dat buurtgenoten in staat stelt om eenvoudig aanhangers te delen, wat zowel duurzaam gebruik bevordert als de gemeenschapsbanden versterkt. Het werkt binnen de deeleconomie met een focus op buurtgerichte mobiliteitsoplossingen.",
-    },
-  ];
-
-  const uitdagingen = [
-    {
-      id: 1,
-      discription:
-        "Een van de uitdagingen binnen BuurBak was de noodzaak van schaalbaarheid. Omdat het nog een startup was, hoefde alles niet meteen groots en uitgebreid opgezet te worden, maar er moest wel ruimte zijn voor toekomstige uitbreidingen en extra capaciteit. Daarnaast was het een uitdaging om de verschillende functies binnen BuurBak helder te structureren, zoals het verhuren en huren van een aanhanger, en het onderscheid tussen de rol van huurder en verhuurder van een aanhanger.",
-    },
-  ];
-
-  const oplossing = [
-    {
-      id: 1,
-      discription:
-        "Anja en Michiel, de oprichters van BuurBak, zijn gestart met hun studentenstartup bij UtrechtINC. Via dit netwerk kwamen ze in contact met mijn opleiding en raakten we in gesprek. Ik heb hen weten te overtuigen om samen aan hun website te werken. Tijdens dit gesprek ontdekte ik dat BuurBak een ontwerp en website nodig had voor een handelsplatform voor het verhuren van aanhangers tussen particulieren.",
-    },
-  ];
-
   return (
     <div className="w-full h-fit min-h-[100dvh] flex flex-col gap-10 items-center pt-24 px-8">
       <h1 className="text-[8vw] sm:text-[2.5vw]">
         Hoe ik <span className="text-[#398D89]">Buur</span>
-        <span className="text-[#EE7B46]">Bak</span> heb gecreëerd en opgezet
+        <span className="text-[#EE7B46]">Bak</span> heb gecreërd en opgezet
       </h1>
       <div className="w-full flex flex-col gap-10">
-        <div className="flex flex-col sm:flex-row justify-between gap-5 sm:gap-0">
-          <div className="flex flex-col gap-8 flex-1 sm:w-1/3 sm:flex-none">
+        <div className="flex flex-col md:flex-row justify-between gap-5 md:gap-0">
+          <div className="flex flex-col gap-8 flex-1 md:w-1/3 md:flex-none">
             <div className="flex flex-col gap-1">
               <h2 className="text-[5vw] sm:text-[1.8vw]">Bedrijf</h2>
               {company.map((company) => (
@@ -116,12 +79,111 @@ const Buurbak = () => {
 
         <div>
           <div className="flex flex-col gap-1">
-            <h2 className="text-[5vw] sm:text-[1.8vw]">De oplossing</h2>
-            {oplossing.map((oplossing) => (
-              <div key={oplossing.id}>
-                <p className="opacity-50">{oplossing.discription}</p>
-              </div>
-            ))}
+            <h2 className="text-[5vw] sm:text-[1.8vw]">Onderzoek & concept</h2>
+            {(() => {
+              const section = buurbakCase.sections.find(
+                (s: any) => s.title === "Onderzoek & concept"
+              );
+              return section ? (
+                <p className="opacity-50">{section.text}</p>
+              ) : null;
+            })()}
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-10">
+          <div className="flex flex-col gap-1">
+            <h2 className="text-[5vw] sm:text-[1.8vw]">Ontwerp</h2>
+            {(() => {
+              const section = buurbakCase.sections.find(
+                (s: any) => s.title === "Ontwerp"
+              );
+              return section ? (
+                <p className="opacity-50">{section.text}</p>
+              ) : null;
+            })()}
+          </div>
+          <Image
+            className=" md:w-[40vw]"
+            src={BrandPersonality}
+            alt="Full buurbak home page"
+          />
+        </div>
+
+        <div>
+          <div className="flex flex-col gap-1">
+            <h2 className="text-[5vw] sm:text-[1.8vw]">Ontwikkeling</h2>
+            {(() => {
+              const section = buurbakCase.sections.find(
+                (s: any) => s.title === "Ontwikkeling"
+              );
+              return section ? (
+                <p className="opacity-50">{section.text}</p>
+              ) : null;
+            })()}
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-10">
+          <div className="flex flex-col gap-1">
+            <h2 className="text-[5vw] sm:text-[1.8vw]">Testen & itereren</h2>
+            {(() => {
+              const section = buurbakCase.sections.find(
+                (s: any) => s.title === "Testen & itereren"
+              );
+              return section ? (
+                <p className="opacity-50">{section.text}</p>
+              ) : null;
+            })()}
+          </div>
+          <Image
+            className=" md:w-[30vw]"
+            src={WebsiteFlow}
+            alt="Full buurbak home page"
+          />
+        </div>
+
+        <div>
+          <div className="flex flex-col gap-1">
+            <h2 className="text-[5vw] sm:text-[1.8vw]">
+              Mijn rol & samenwerking
+            </h2>
+            {(() => {
+              const section = buurbakCase.sections.find(
+                (s: any) => s.title === "Mijn rol & samenwerking"
+              );
+              return section ? (
+                <p className="opacity-50">{section.text}</p>
+              ) : null;
+            })()}
+          </div>
+        </div>
+
+        <div>
+          <div className="flex flex-col gap-1">
+            <h2 className="text-[5vw] sm:text-[1.8vw]">Resultaat</h2>
+            {(() => {
+              const section = buurbakCase.sections.find(
+                (s: any) => s.title === "Resultaat"
+              );
+              return section ? (
+                <p className="opacity-50">{section.text}</p>
+              ) : null;
+            })()}
+          </div>
+        </div>
+
+        <div>
+          <div className="flex flex-col gap-1">
+            <h2 className="text-[5vw] sm:text-[1.8vw]">Reflectie</h2>
+            {(() => {
+              const section = buurbakCase.sections.find(
+                (s: any) => s.title === "Reflectie"
+              );
+              return section ? (
+                <p className="opacity-50">{section.text}</p>
+              ) : null;
+            })()}
           </div>
         </div>
       </div>
