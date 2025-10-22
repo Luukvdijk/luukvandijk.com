@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Logo from "../assets/LogoDark.svg";
 import { useScroll } from "./ScrollContext";
 
 export default function Navbar() {
@@ -39,7 +38,14 @@ export default function Navbar() {
           }}
           className="focus:outline-none"
         >
-          <Image src={Logo} alt="Home" className="w-10 h-auto" />
+          <div className="relative w-10 h-10">
+            <Image
+              src="/images/logoDark.svg"
+              alt="Home"
+              fill
+              className="object-contain"
+            />
+          </div>
         </Link>
         {navmenu.map((nav) => (
           <Link

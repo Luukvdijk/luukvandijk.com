@@ -1,5 +1,4 @@
 import Image from "next/image";
-import HomePage from "../assets/BuurbakHome.png";
 
 const FormerCustomers = () => {
   const formerCustomers = [
@@ -7,7 +6,7 @@ const FormerCustomers = () => {
       id: 1,
       number: "01",
       title: "BuurBak",
-      img: HomePage,
+      img: "/images/buurbak/cover.png",
       discription:
         "BuurBak is een Nederlands platform waarmee buurtbewoners hun aanhangwagens kunnen delen. Het doel is om ongebruikte trailers beter te benutten en een duurzame, gemeenschapsgerichte deelcultuur te bevorderen. Zo kunnen gebruikers geld besparen en hun buurt beter leren kennen door gebruik te maken van trailers die al beschikbaar zijn in hun omgeving.",
     },
@@ -24,11 +23,14 @@ const FormerCustomers = () => {
                 <p className="opacity-50 text-[5vw] sm:text-[2vw] min-w-fit">
                   {item.number}
                 </p>
-                <Image
-                  src={item.img}
-                  alt={item.title}
-                  className="aspect-video w-[90vw] h-auto sm:h-auto sm:w-[40vw] object-cover"
-                />
+                <div className="relative aspect-video w-[90vw] h-auto sm:h-auto sm:w-[40vw] object-cover">
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <div className="max-w-full sm:max-w-[50vw]">
                   <h2 className="text-[5vw] sm:text-[2vw]">{item.title}</h2>
                   <p className="opacity-50 text-[3vw] sm:text-[1.5vw]">

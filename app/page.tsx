@@ -1,3 +1,4 @@
+import { constructMetadata } from "../lib/seo";
 import CaseStudie from "./components/CaseStudie";
 import Contact from "./components/Contact";
 import FormerCustomers from "./components/FormerCustomers";
@@ -5,7 +6,6 @@ import Header from "./components/Header";
 import Review from "./components/Review";
 import ScrollableSection from "./components/ScrollableSection";
 import Steps from "./components/Steps";
-import { constructMetadata } from "./lib/metadata";
 
 export const metadata = constructMetadata({
   title: "Webdesign, Development & Hosting | Luuk van Dijk",
