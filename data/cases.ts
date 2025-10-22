@@ -118,7 +118,7 @@ export const cases: CaseStudy[] = [
     summary:
       "Tijdens mijn stage bij YoungPWR heb ik de website geoptimaliseerd en uitgebreid. Ik verbeterde de frontend, voegde nieuwe features toe, richtte het CMS in en zorgde dat hosting en analytics betrouwbaar werkten. Het resultaat is een schaalbaar platform dat jongeren en bedrijven samenbrengt.",
     themeColor: "#F0E7FF",
-    image: "/images/youngpwr/cover.jpg",
+    image: "/images/youngpwr/cover.png",
 
     seo: {
       title: "YoungPWR – Case Study",
