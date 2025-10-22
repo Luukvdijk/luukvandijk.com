@@ -8,7 +8,14 @@ const CaseStudie = () => {
       title: "BuurBak",
       img: "/images/buurbak/cover.png",
       cat: "Handelsplatform",
+      href: "/buurbak",
     },
+    // {
+    //   title: "YoungPWR",
+    //   img: "/images/youngpwr/cover.png",
+    //   cat: "Handelsplatform",
+    //   href: "/youngpwr",
+    // },
   ];
 
   return (
@@ -19,14 +26,14 @@ const CaseStudie = () => {
       <div className="flex-1 flex max-h-[80vh] justify-center items-center">
         {caseStudie.map((item) => (
           <Link
-            href={"/buurbak"}
+            href={`/case-studies${item.href}`}
             key={item.title}
             className="flex flex-col gap-4 w-full max-w-[90vw] sm:max-w-none sm:w-[50vw]"
           >
-            <div className="relative w-full h-auto">
+            <div className="relative w-full h-auto aspect-video">
               <Image
                 src={item.img}
-                alt="BuurBak home page"
+                alt={`${item.title} home page`}
                 fill
                 className="object-contain"
               />

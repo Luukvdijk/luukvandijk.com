@@ -5,7 +5,6 @@ import Image from "next/image";
 type Props = {
   data: CaseStudy;
   className?: string;
-  // Optional override for the big H1 if you want per-case custom wording
   renderTitle?: (data: CaseStudy) => React.ReactNode;
 };
 

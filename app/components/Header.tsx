@@ -4,7 +4,7 @@ import Image from "next/image";
 const Header = () => {
   return (
     <div className="w-full h-dvh">
-      <div className="absolute realtive right-20 bottom-10 w-full sm:w-1/2 max-w-[70vw] h-full sm:h-auto max-h-[90dvh] opacity-30">
+      <div className="absolute realtive ml-2 sm:right-20 bottom-1 sm:bottom-10 self-center w-11/12 sm:w-1/2 h-dvh sm:h-[90dvh] opacity-30">
         <Image
           src="/images/logo.svg"
           alt="logo"

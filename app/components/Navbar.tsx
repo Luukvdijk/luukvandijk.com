@@ -38,7 +38,7 @@ export default function Navbar() {
           }}
           className="focus:outline-none"
         >
-          <div className="relative w-10 h-auto">
+          <div className="relative w-10 h-10">
             <Image
               src="/images/logoDark.svg"
               alt="Home"
