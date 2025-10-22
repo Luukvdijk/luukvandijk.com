@@ -52,11 +52,14 @@ const Review = () => {
                   </p>
                   <div className="flex flex-row gap-4">
                     {review.img ? (
-                      <Image
-                        src={review.img}
-                        alt="profiel foto"
-                        className="size-[8vw] sm:size-[3.5vw]"
-                      />
+                      <div className="relative size-[8vw] sm:size-[3.5vw]">
+                        <Image
+                          src={review.img}
+                          alt="profiel foto"
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
                     ) : (
                       <UserCircle className="size-[10vw] sm:size-[3.5vw]" />
                     )}
