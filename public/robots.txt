@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.luukvandijk.com/sitemap.xml
