@@ -2,7 +2,7 @@
 import CaseStudyLayout from "@/app/components/CaseStudyLayout";
 import JsonLd from "@/app/components/JsonLd";
 import { getAllCases, getCase } from "@/lib/cases";
-import { buildArticleJsonLd } from "@/lib/json-ld";
+import { buildArticleJsonLd, buildBreadcrumbJsonLd } from "@/lib/json-ld";
 import { constructMetadata } from "@/lib/seo";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -51,8 +51,13 @@ export default async function CasePage({ params }: PageProps) {
     title: data.seo?.title ?? data.title,
     description: data.seo?.description ?? data.summary,
     image: data.seo?.image ?? data.image,
-    // optionally: datePublished: data.publishedAt, dateModified: data.updatedAt,
   });
+
+  const breadcrumbsLd = buildBreadcrumbJsonLd(site, [
+    { name: "Home", path: "/" },
+    { name: "Case studies", path: "/case-studies" },
+    { name: data.title, path: `/case-studies/${slug}` },
+  ]);
 
   const renderTitle =
     slug === "buurbak"
@@ -66,6 +71,7 @@ export default async function CasePage({ params }: PageProps) {
 
   return (
     <>
+      <JsonLd id="ld-breadcrumbs" data={breadcrumbsLd} />
       <JsonLd id="ld-article" data={jsonLd} />
       <CaseStudyLayout data={data} renderTitle={renderTitle} />
     </>
