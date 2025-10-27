@@ -13,6 +13,8 @@ export const metadata = constructMetadata({
     "Professionele websites op maat met focus op design, gebruiksvriendelijkheid en performance. Van concept tot livegang — inclusief hosting en onderhoud.",
   keywords:
     "webdesign, webdevelopment, hosting, Luuk van Dijk, website laten maken, frontend developer, UI UX design, maatwerk websites, WordPress alternatief, Next.js websites",
+  image: "/og/default.png",
+  pathname: "/",
 });
 
 export default function Home() {
