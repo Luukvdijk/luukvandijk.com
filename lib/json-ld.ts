@@ -62,31 +62,31 @@ import { siteData } from "@/data/site";
 
 export function buildLinkedGraphJsonLd() {
   const { company } = siteData;
-  const { founder } = company;
+  const base = company.url.endsWith("/") ? company.url : company.url + "/";
 
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": `${company.url}#website`,
-        url: company.url,
+        "@id": `${base}#website`,
+        url: base,
         name: company.name,
         inLanguage: "nl-NL",
-        publisher: { "@id": `${company.url}#organization` },
-        author: { "@id": `${company.url}#person` },
+        publisher: { "@id": `${base}#organization` },
+        author: { "@id": `${base}#person` }, // ensures Person is surfaced
       },
       {
         "@type": "Organization",
-        "@id": `${company.url}#organization`,
+        "@id": `${base}#organization`,
         name: company.name,
         legalName: company.legalName,
-        url: company.url,
+        url: base,
         logo: {
           "@type": "ImageObject",
-          "@id": `${company.url}#logo`,
-          url: company.logo,
-          contentUrl: company.logo,
+          "@id": `${base}#logo`,
+          url: `${base}images/logo.svg`, // absolute
+          contentUrl: `${base}images/logo.svg`, // absolute
         },
         email: company.email,
         contactPoint: [
@@ -102,18 +102,18 @@ export function buildLinkedGraphJsonLd() {
           propertyID: "KVK",
           value: company.kvk,
         },
-        founder: { "@id": `${company.url}#person` },
+        founder: { "@id": `${base}#person` },
       },
       {
         "@type": "Person",
-        "@id": `${company.url}#person`,
-        name: founder.name,
-        jobTitle: founder.title,
-        nationality: founder.nationality,
+        "@id": `${base}#person`,
+        name: siteData.company.founder.name,
+        jobTitle: siteData.company.founder.title,
+        nationality: siteData.company.founder.nationality,
         email: company.email,
-        url: company.url,
-        sameAs: [founder.linkedIn],
-        worksFor: { "@id": `${company.url}#organization` },
+        url: base,
+        sameAs: [siteData.company.founder.linkedIn],
+        worksFor: { "@id": `${base}#organization` },
       },
     ],
   };
