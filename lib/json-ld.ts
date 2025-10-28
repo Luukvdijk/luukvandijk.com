@@ -58,11 +58,8 @@ export function buildBreadcrumbJsonLd(
   };
 }
 
-import { siteData } from "@/data/site";
-
 export function buildLinkedGraphJsonLd() {
-  const { company } = siteData;
-  const base = company.url.endsWith("/") ? company.url : company.url + "/";
+  const base = "https://www.luukvandijk.com";
 
   return {
     "@context": "https://schema.org",
@@ -71,28 +68,28 @@ export function buildLinkedGraphJsonLd() {
         "@type": "WebSite",
         "@id": `${base}#website`,
         url: base,
-        name: company.name,
+        name: "Luuk van Dijk – Web Developer & Designer",
         inLanguage: "nl-NL",
         publisher: { "@id": `${base}#organization` },
-        author: { "@id": `${base}#person` }, // ensures Person is surfaced
+        author: { "@id": `${base}#person` },
       },
       {
         "@type": "Organization",
         "@id": `${base}#organization`,
-        name: company.name,
-        legalName: company.legalName,
+        name: "Luuk van Dijk",
+        legalName: "Luuk van Dijk",
         url: base,
         logo: {
           "@type": "ImageObject",
           "@id": `${base}#logo`,
-          url: `${base}images/logo.svg`, // absolute
-          contentUrl: `${base}images/logo.svg`, // absolute
+          url: `${base}/images/logo.svg`,
+          contentUrl: `${base}/images/logo.svg`,
         },
-        email: company.email,
+        email: "info@luukvandijk.com",
         contactPoint: [
           {
             "@type": "ContactPoint",
-            email: company.email,
+            email: "info@luukvandijk.com",
             contactType: "customer support",
             availableLanguage: ["Dutch", "English"],
           },
@@ -100,19 +97,19 @@ export function buildLinkedGraphJsonLd() {
         identifier: {
           "@type": "PropertyValue",
           propertyID: "KVK",
-          value: company.kvk,
+          value: "95680756",
         },
         founder: { "@id": `${base}#person` },
       },
       {
         "@type": "Person",
         "@id": `${base}#person`,
-        name: siteData.company.founder.name,
-        jobTitle: siteData.company.founder.title,
-        nationality: siteData.company.founder.nationality,
-        email: company.email,
+        name: "Luuk van Dijk",
+        jobTitle: "Web Developer & Designer",
+        nationality: "Dutch",
+        email: "info@luukvandijk.com",
         url: base,
-        sameAs: [siteData.company.founder.linkedIn],
+        sameAs: ["https://www.linkedin.com/in/luuk-van-dijk-web-development/"],
         worksFor: { "@id": `${base}#organization` },
       },
     ],
