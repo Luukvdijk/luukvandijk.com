@@ -34,6 +34,7 @@ const Footer = () => {
         itemScope
         itemType="https://schema.org/Person"
         itemProp="founder"
+        itemID="https://www.luukvandijk.com#person"
       >
         <p className="opacity-50 text-[3vw] sm:text-[2.5vw]">Contact</p>
 
