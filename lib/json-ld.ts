@@ -49,109 +49,62 @@ export function buildBreadcrumbJsonLd(
   };
 }
 
-export function buildWebsiteJsonLd({
-  siteUrl,
-  name = "Luuk van Dijk",
-  description = "Frontend developer & designer",
-  logo = "/images/logoDark.svg",
-}: {
-  siteUrl: string;
-  name?: string;
-  description?: string;
-  logo?: string;
-}) {
-  const absoluteLogo = new URL(logo, siteUrl).toString();
+import { siteData } from "@/data/site";
+
+export function buildLinkedGraphJsonLd() {
+  const { company } = siteData;
+  const { founder } = company;
 
   return {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    url: siteUrl,
-    name,
-    description,
-    inLanguage: "nl",
-    publisher: {
-      "@type": "Organization",
-      name,
-      url: siteUrl,
-      logo: {
-        "@type": "ImageObject",
-        url: absoluteLogo,
-      },
-    },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteUrl}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
-  };
-}
-
-export function buildOrganizationJsonLd({
-  siteUrl,
-  name = "Luukvandijk",
-  description = "Web developer & designer in Nederland. Ik ontwerp en bouw schaalbare websites en webapps met Next.js, React en een strakke UX.",
-  logo = "/images/logoDark.svg",
-  email = "info@luukvandijk.com",
-  countryCode = "NL", // ISO 3166-1 alpha-2
-  countryName = "Nederland",
-  sameAs = ["https://www.linkedin.com/in/luuk-van-dijk-web-development"],
-}: {
-  siteUrl: string;
-  name?: string;
-  description?: string;
-  logo?: string; // relative or absolute
-  email?: string;
-  countryCode?: string;
-  countryName?: string;
-  sameAs?: string[];
-}) {
-  const absoluteLogo = new URL(logo, siteUrl).toString();
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    url: siteUrl,
-    name,
-    description,
-    inLanguage: "nl",
-    logo: {
-      "@type": "ImageObject",
-      url: absoluteLogo,
-    },
-    contactPoint: [
+    "@graph": [
       {
-        "@type": "ContactPoint",
-        contactType: "customer support",
-        email: `mailto:${email}`,
-        availableLanguage: ["nl", "en"],
+        "@type": "WebSite",
+        "@id": `${company.url}#website`,
+        url: company.url,
+        name: company.name,
+        inLanguage: "nl-NL",
+        publisher: { "@id": `${company.url}#organization` },
+      },
+      {
+        "@type": "Organization",
+        "@id": `${company.url}#organization`,
+        name: company.name,
+        legalName: company.legalName,
+        url: company.url,
+        logo: {
+          "@type": "ImageObject",
+          "@id": `${company.url}#logo`,
+          url: company.logo,
+          contentUrl: company.logo,
+        },
+        email: company.email,
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: company.email,
+            contactType: "customer support",
+            availableLanguage: ["Dutch", "English"],
+          },
+        ],
+        identifier: {
+          "@type": "PropertyValue",
+          propertyID: "KVK",
+          value: company.kvk,
+        },
+        founder: { "@id": `${company.url}#person` },
+      },
+      {
+        "@type": "Person",
+        "@id": `${company.url}#person`,
+        name: founder.name,
+        jobTitle: founder.title,
+        nationality: founder.nationality,
+        email: company.email,
+        url: company.url,
+        sameAs: [founder.linkedIn],
+        worksFor: { "@id": `${company.url}#organization` },
       },
     ],
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: countryCode, // e.g. NL
-      name: countryName, // human-friendly label
-    },
-    sameAs,
-  };
-}
-
-export function buildPersonJsonLd() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Luuk van Dijk",
-    url: "https://www.luukvandijk.com",
-    jobTitle: "Web Developer & Designer",
-    nationality: "Nederland",
-    email: "info@luukvandijk.com",
-    sameAs: [
-      "https://www.linkedin.com/in/luuk-van-dijk-web-development",
-      // "https://github.com/yourusername",
-    ],
-    worksFor: {
-      "@type": "Organization",
-      name: "Luuk van Dijk Webdesign",
-      url: "https://www.luukvandijk.com",
-    },
   };
 }

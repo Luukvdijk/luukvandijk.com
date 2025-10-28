@@ -1,10 +1,8 @@
-import { buildPersonJsonLd } from "@/lib/json-ld";
 import { constructMetadata } from "../lib/seo";
 import CaseStudie from "./components/CaseStudie";
 import Contact from "./components/Contact";
 import FormerCustomers from "./components/FormerCustomers";
 import Header from "./components/Header";
-import JsonLd from "./components/JsonLd";
 import Review from "./components/Review";
 import ScrollableSection from "./components/ScrollableSection";
 import Steps from "./components/Steps";
@@ -20,11 +18,8 @@ export const metadata = constructMetadata({
 });
 
 export default function Home() {
-  const personJsonLd = buildPersonJsonLd();
-
   return (
     <>
-      <JsonLd data={personJsonLd} />
       <h1 className="sr-only">Luuk van Dijk — Webdeveloper & Designer</h1>
       <p className="sr-only">
         Ik ontwerp en ontwikkel moderne websites met Next.js en React, met focus
