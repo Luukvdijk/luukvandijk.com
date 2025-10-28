@@ -29,9 +29,9 @@ const Steps = () => {
 
   return (
     <div className="w-full h-dvh flex flex-row flex-wrap justify-between items-center px-8">
-      <h1 className="text-[8vw] sm:text-[4vw] flex-1 min-w-80 max-w-full">
+      <h2 className="text-[8vw] sm:text-[4vw] flex-1 min-w-80 max-w-full">
         Deze stappen gaan we doorlopen om jouw website te maken
-      </h1>
+      </h2>
       <div className="flex-1 min-w-80 max-w-full">
         <Accordion
           type="single"
@@ -42,7 +42,7 @@ const Steps = () => {
             return (
               <AccordionItem key={steps.id} value={steps.title}>
                 <AccordionTrigger>
-                  <h2 className="text-[5vw] sm:text-[1.5vw]">{steps.title}</h2>
+                  <h3 className="text-[5vw] sm:text-[1.5vw]">{steps.title}</h3>
                 </AccordionTrigger>
                 <AccordionContent>{steps.discrpition}</AccordionContent>
               </AccordionItem>

@@ -35,7 +35,7 @@ const Review = () => {
         opts={{ loop: true }}
       >
         <div className="flex flex-col w-full sm:flex-row sm:justify-between">
-          <h1 className="w-fit text-[8vw] sm:text-[3vw]">Klanten reviews</h1>
+          <h2 className="w-fit text-[8vw] sm:text-[3vw]">Klanten reviews</h2>
           <div className="hidden sm:flex flex-row gap-4">
             <CarouselPrevious />
             <CarouselNext />

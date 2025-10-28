@@ -20,9 +20,9 @@ const CaseStudie = () => {
 
   return (
     <div className="w-full h-dvh flex flex-col px-8">
-      <h1 className="text-[12vw] sm:text-[3vw] w-fit mb-4 p-0 m-0">
+      <h2 className="text-[12vw] sm:text-[3vw] w-fit mb-4 p-0 m-0">
         Case studie
-      </h1>
+      </h2>
       <div className="flex-1 flex max-h-[80vh] justify-center items-center">
         {caseStudie.map((item) => (
           <Link
@@ -43,9 +43,9 @@ const CaseStudie = () => {
                 <p className="opacity-50 text-[4vw] sm:text-[1vw] m-0 p-0">
                   {item.cat}
                 </p>
-                <h2 className="text-[10vw] sm:text-[2vw] m-0 p-0">
+                <h3 className="text-[10vw] sm:text-[2vw] m-0 p-0">
                   {item.title}
-                </h2>
+                </h3>
               </div>
               <div className="group flex flex-row gap-4 items-center">
                 <p className="opacity-50 sm:group-hover:opacity-100 transition-opacity duration-300">

@@ -2,7 +2,7 @@
 import CaseStudyLayout from "@/app/components/CaseStudyLayout";
 import JsonLd from "@/app/components/JsonLd";
 import { getAllCases, getCase } from "@/lib/cases";
-import { buildArticleJsonLd, buildBreadcrumbJsonLd } from "@/lib/json-ld";
+import { buildBreadcrumbJsonLd, buildProjectJsonLd } from "@/lib/json-ld";
 import { constructMetadata } from "@/lib/seo";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -45,12 +45,15 @@ export default async function CasePage({ params }: PageProps) {
 
   const site =
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.luukvandijk.com";
-  const jsonLd = buildArticleJsonLd({
+  const jsonLd = buildProjectJsonLd({
     siteUrl: site,
-    pathname: `/case-studies/${slug}`,
+    pathname: `/case-studies/${data.slug}`,
     title: data.seo?.title ?? data.title,
     description: data.seo?.description ?? data.summary,
     image: data.seo?.image ?? data.image,
+    keywords: data.techStack, // optional, but helpful for Google’s context
+    datePublished: "2025-02-01", // set realistic dates later
+    dateModified: "2025-06-01",
   });
 
   const breadcrumbsLd = buildBreadcrumbJsonLd(site, [
@@ -72,7 +75,10 @@ export default async function CasePage({ params }: PageProps) {
   return (
     <>
       <JsonLd id="ld-breadcrumbs" data={breadcrumbsLd} />
-      <JsonLd id="ld-article" data={jsonLd} />
+      <JsonLd id="ld-project" data={jsonLd} />
+      <h1 className="sr-only">{data.seo.hiddenH1}</h1>
+      <p className="sr-only">{data.seo.hiddenIntro}</p>
+
       <CaseStudyLayout data={data} renderTitle={renderTitle} />
     </>
   );

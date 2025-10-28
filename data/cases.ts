@@ -26,6 +26,10 @@ export const cases: CaseStudy[] = [
         "Frontend development",
         "Case study",
       ],
+      hiddenH1:
+        "Buurbak — case study van Luuk van Dijk (webdeveloper & designer)",
+      hiddenIntro:
+        "Ik ontwierp en bouwde voor Buurbak een schaalbaar platform met Next.js en een sterke focus op UX, performance en eenvoud.",
     },
 
     company: [
@@ -134,6 +138,10 @@ export const cases: CaseStudy[] = [
         "CMS",
         "Case study",
       ],
+      hiddenH1:
+        "YoungPWR — case study van Luuk van Dijk (webdeveloper & designer)",
+      hiddenIntro:
+        "Tijdens mijn stage optimaliseerde ik de site van YoungPWR: frontend, CMS, hosting en analytics, gericht op schaalbaarheid en gebruiksgemak.",
     },
 
     company: [

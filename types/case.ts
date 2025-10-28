@@ -11,9 +11,11 @@ export type CaseBlockType =
 export type SEOData = {
   title: string;
   description: string;
-  image: string; // absolute or path under /public
+  image: string;
   keywords?: string[];
   noIndex?: boolean;
+  hiddenH1: string;
+  hiddenIntro: string;
 };
 
 export type CompanyInfo = {

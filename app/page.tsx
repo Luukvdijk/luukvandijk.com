@@ -20,6 +20,12 @@ export const metadata = constructMetadata({
 export default function Home() {
   return (
     <>
+      <h1 className="sr-only">Luuk van Dijk — Webdeveloper & Designer</h1>
+      <p className="sr-only">
+        Ik ontwerp en ontwikkel moderne websites met Next.js en React, met focus
+        op performance, design en gebruiksvriendelijkheid.
+      </p>
+
       <Header />
       <ScrollableSection id="stappen">
         <Steps />
