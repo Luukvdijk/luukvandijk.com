@@ -1,35 +1,44 @@
-export function buildArticleJsonLd({
-  siteUrl, // e.g. process.env.NEXT_PUBLIC_SITE_URL
-  pathname, // e.g. `/case-studies/buurbak`
+export function buildProjectJsonLd({
+  siteUrl, // e.g. https://www.luukvandijk.com
+  pathname, // e.g. /case-studies/buurbak
   title,
   description,
-  image, // absolute or relative
-  authorName = "Luuk van Dijk",
-  datePublished, // optional ISO string
-  dateModified, // optional ISO string
+  image, // relative or absolute
+  datePublished, // ISO string (optional)
+  dateModified, // ISO string (optional)
+  keywords, // optional array of tags
 }: {
   siteUrl: string;
   pathname: string;
   title: string;
   description: string;
   image?: string;
-  authorName?: string;
   datePublished?: string;
   dateModified?: string;
+  keywords?: string[];
 }) {
   const url = new URL(pathname, siteUrl).toString();
   const img = image ? new URL(image, siteUrl).toString() : undefined;
 
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "Project",
+    "@id": `${url}#project`,
+    url,
+    name: title,
     headline: title,
     description,
+    inLanguage: "nl-NL",
     image: img ? [img] : undefined,
-    author: [{ "@type": "Person", name: authorName }],
-    mainEntityOfPage: url,
+    // Explicit relationships to your global graph:
+    author: { "@id": `${siteUrl}#person` },
+    creator: { "@id": `${siteUrl}#person` },
+    publisher: { "@id": `${siteUrl}#organization` },
+    isPartOf: { "@id": `${siteUrl}#website` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
     datePublished,
-    dateModified,
+    dateModified: dateModified ?? datePublished,
+    keywords,
   };
 }
 
