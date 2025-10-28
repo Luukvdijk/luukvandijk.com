@@ -78,9 +78,9 @@ export default function Contact() {
 
   return (
     <div className="w-full h-fit px-8">
-      <h1 className="text-[8vw] sm:text-[3vw] w-fit sm:mb-8">
+      <h2 className="text-[8vw] sm:text-[3vw] w-fit sm:mb-8">
         Vertel mij over jouw project
-      </h1>
+      </h2>
       <div className="w-full h-[80vh] flex justify-center items-center">
         <form
           className="flex flex-col w-full max-w-[80vw] h-fit gap-6"

@@ -132,13 +132,13 @@ export default function CaseStudyLayout({
         className
       )}
     >
-      <h1 className="text-[clamp(28px,8vw,2.5vw)] text-center leading-tight">
+      <h2 className="text-[clamp(28px,8vw,2.5vw)] text-center leading-tight">
         {renderTitle ? (
           renderTitle(data)
         ) : (
           <>Hoe ik {data.title} heb gecreëerd en opgezet</>
         )}
-      </h1>
+      </h2>
 
       <div className="w-full flex flex-col gap-10">
         {/* Meta column + hero image row */}
