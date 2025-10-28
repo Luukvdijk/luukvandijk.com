@@ -74,6 +74,7 @@ export function buildLinkedGraphJsonLd() {
         name: company.name,
         inLanguage: "nl-NL",
         publisher: { "@id": `${company.url}#organization` },
+        author: { "@id": `${company.url}#person` },
       },
       {
         "@type": "Organization",
