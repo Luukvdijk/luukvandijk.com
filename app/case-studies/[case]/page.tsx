@@ -73,6 +73,9 @@ export default async function CasePage({ params }: PageProps) {
     <>
       <JsonLd id="ld-breadcrumbs" data={breadcrumbsLd} />
       <JsonLd id="ld-article" data={jsonLd} />
+      <h1 className="sr-only">{data.seo.hiddenH1}</h1>
+      <p className="sr-only">{data.seo.hiddenIntro}</p>
+
       <CaseStudyLayout data={data} renderTitle={renderTitle} />
     </>
   );

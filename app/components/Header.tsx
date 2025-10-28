@@ -14,16 +14,16 @@ const Header = () => {
       </div>
       <div className="w-full h-[90%] flex items-end pl-8">
         <div className="flex flex-row-reverse gap-[10vw]">
-          <h1 className="h-fit w-fit text-[12vw] sm:text-[8vw] text-9xl">
+          <h2 className="h-fit w-fit text-[12vw] sm:text-[8vw] text-9xl">
             Design
             <br />
             Development
             <br />
             Launch
             <br />
-          </h1>
+          </h2>
           <div className="flex-col justify-between hidden sm:flex">
-            <h2 className="h-fit w-fit text-[1.5vw]">
+            <h3 className="h-fit w-fit text-[1.5vw]">
               Creatief
               <br />
               Gebruiksvriendelijk
@@ -36,7 +36,7 @@ const Header = () => {
               <br />
               Kwaliteit
               <br />
-            </h2>
+            </h3>
             <ArrowDownRight size={"10vw"} />
           </div>
         </div>

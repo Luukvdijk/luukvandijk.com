@@ -134,3 +134,24 @@ export function buildOrganizationJsonLd({
     sameAs,
   };
 }
+
+export function buildPersonJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Luuk van Dijk",
+    url: "https://www.luukvandijk.com",
+    jobTitle: "Web Developer & Designer",
+    nationality: "Nederland",
+    email: "info@luukvandijk.com",
+    sameAs: [
+      "https://www.linkedin.com/in/luuk-van-dijk-web-development",
+      // "https://github.com/yourusername",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "Luuk van Dijk Webdesign",
+      url: "https://www.luukvandijk.com",
+    },
+  };
+}

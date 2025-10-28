@@ -14,7 +14,7 @@ const FormerCustomers = () => {
 
   return (
     <div className="w-full h-fit px-8 pb-8">
-      <h1 className="text-[8vw] sm:text-[3vw] w-fit">Voormalige klanten</h1>
+      <h2 className="text-[8vw] sm:text-[3vw] w-fit">Voormalige klanten</h2>
       <div className="w-full h-fit">
         {formerCustomers.map((item) => {
           return (
@@ -32,7 +32,7 @@ const FormerCustomers = () => {
                   />
                 </div>
                 <div className="max-w-full sm:max-w-[50vw]">
-                  <h2 className="text-[5vw] sm:text-[2vw]">{item.title}</h2>
+                  <h3 className="text-[5vw] sm:text-[2vw]">{item.title}</h3>
                   <p className="opacity-50 text-[3vw] sm:text-[1.5vw]">
                     {item.discription}
                   </p>
