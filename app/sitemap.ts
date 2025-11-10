@@ -13,12 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1.0,
     },
-    {
-      url: `${site}/case-studies`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
   ];
 
   const caseRoutes: MetadataRoute.Sitemap = getAllCases().map((c) => ({

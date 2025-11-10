@@ -1,4 +1,3 @@
-// Block types — stable keys you can mirror in a CMS component type
 export type CaseBlockType =
   | "research"
   | "design"
@@ -22,7 +21,7 @@ export type CompanyInfo = {
   id: number;
   cat: string;
   plaats: string;
-  employess: string; // keep your current field name (typo included)
+  employess: string;
   founded: string;
 };
 
@@ -36,17 +35,15 @@ export type ToolSet = {
   point6?: string;
 };
 
-// Your data currently uses `discription` — keep it for now to avoid refactors
 export type BriefItem = {
   id: number;
   discription: string;
 };
 
 export type BaseBlock = {
-  id: string; // stable id (slug + index is fine for now)
+  id: string;
   type: CaseBlockType;
-  title?: string; // human-readable heading
-  // You can add `order?: number` later if CMS doesn't guarantee order
+  title?: string;
 };
 
 export type TextBlock = BaseBlock & {
@@ -54,11 +51,10 @@ export type TextBlock = BaseBlock & {
 };
 
 export type MediaBlock = TextBlock & {
-  image?: string; // URL or path
+  image?: string;
   imageAlt?: string;
 };
 
-// Concrete blocks
 export type ResearchBlock = TextBlock & { type: "research" };
 export type DesignBlock = MediaBlock & { type: "design" };
 export type DevelopmentBlock = TextBlock & { type: "development" };
@@ -80,16 +76,15 @@ export type CaseStudy = {
   id: number;
   slug: string;
   title: string;
-  description: string; // short intro
-  summary: string; // used in SEO + overview grid
+  description: string;
+  summary: string;
   themeColor: string;
-  image: string; // hero image
+  image: string;
   seo: SEOData;
 
   company: CompanyInfo[];
   tools: ToolSet[];
 
-  // Kept your original Dutch arrays:
   omschrijving?: BriefItem[];
   uitdagingen?: BriefItem[];
 
@@ -99,13 +94,11 @@ export type CaseStudy = {
 
   blocks: CaseBlock[];
 
-  // optional CMS-ish flags
   draft?: boolean;
   updatedAt?: string;
   publishedAt?: string;
 };
 
-// Lighter list item for /case-studies overview
 export type CasePreview = Pick<
   CaseStudy,
   "slug" | "title" | "summary" | "image" | "themeColor"

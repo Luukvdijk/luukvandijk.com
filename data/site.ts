@@ -11,6 +11,7 @@ export const siteData = {
       title: "Web Developer & Designer",
       nationality: "Nederland",
       linkedIn: "https://www.linkedin.com/in/luuk-van-dijk-web-development",
+      github: "https://github.com/Luukvdijk",
     },
   },
 };
