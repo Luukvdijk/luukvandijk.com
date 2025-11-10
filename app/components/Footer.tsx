@@ -52,16 +52,29 @@ const Footer = () => {
           KVK: {company.kvk}
         </p>
 
-        {/* LinkedIn */}
-        <a
-          href={founder.linkedIn}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[4vw] sm:text-[1.5vw] mt-3 opacity-80 hover:opacity-100 transition"
-          itemProp="sameAs"
-        >
-          LinkedIn
-        </a>
+        <div className="w-full flex justify-evenly">
+          {/* LinkedIn */}
+          <a
+            href={founder.linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[4vw] sm:text-[1.5vw] mt-3 opacity-80 hover:opacity-100 transition"
+            itemProp="sameAs"
+          >
+            LinkedIn
+          </a>
+
+          {/* Github */}
+          <a
+            href={founder.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[4vw] sm:text-[1.5vw] mt-3 opacity-80 hover:opacity-100 transition"
+            itemProp="sameAs"
+          >
+            Github
+          </a>
+        </div>
 
         {/* Hidden metadata to connect to JSON-LD */}
         <meta itemProp="name" content={company.name} />

@@ -1,12 +1,12 @@
 export function buildProjectJsonLd({
-  siteUrl, // e.g. https://www.luukvandijk.com
-  pathname, // e.g. /case-studies/buurbak
+  siteUrl,
+  pathname,
   title,
   description,
-  image, // relative or absolute
-  datePublished, // ISO string (optional)
-  dateModified, // ISO string (optional)
-  keywords, // optional array of tags
+  image,
+  datePublished,
+  dateModified,
+  keywords,
 }: {
   siteUrl: string;
   pathname: string;

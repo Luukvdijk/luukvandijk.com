@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 type SeoProps = {
-  title?: string; // e.g. "Buurbak – Case Study"
+  title?: string;
   description?: string;
-  keywords?: string[] | string; // either array or comma string
-  pathname?: string; // e.g. `/cases/buurbak`
-  image?: string | URL; // absolute or relative
+  keywords?: string[] | string;
+  pathname?: string;
+  image?: string | URL;
   type?: "website" | "article";
-  noIndex?: boolean; // for drafts/404s
+  noIndex?: boolean;
 };
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://luukvandijk.com";
@@ -23,7 +23,7 @@ export function constructMetadata({
 }: SeoProps = {}): Metadata {
   const url = new URL(SITE_URL);
 
-  const img = image ?? "/og/default.png"; // put a sensible fallback in /public/og/default.png
+  const img = image ?? "/og/default.png";
 
   const keywordsArray = Array.isArray(keywords)
     ? keywords
@@ -36,7 +36,6 @@ export function constructMetadata({
 
   return {
     metadataBase: url,
-    // Prefer default/template over manual string concat
     title: {
       default: "Luuk van Dijk",
       template: "%s | Luuk van Dijk",
