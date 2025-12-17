@@ -1,6 +1,7 @@
 import { buildLinkedGraphJsonLd } from "@/lib/json-ld";
-import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { AnalyticsConsent } from "./components/AnalyticsConsent";
 import Footer from "./components/Footer";
 import JsonLd from "./components/JsonLd";
 import Navbar from "./components/Navbar";
@@ -23,14 +24,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <head>
         <JsonLd data={buildLinkedGraphJsonLd()} />
-
+      </head>
+      <body>
         <ScrollProvider>
           <Navbar />
           <main>{children}</main>
           <Footer />
         </ScrollProvider>
+        <AnalyticsConsent />
         <Analytics />
       </body>
     </html>
