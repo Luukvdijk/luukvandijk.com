@@ -1,4 +1,10 @@
-import type { CaseBlock, CaseStudy, CompanyInfo, ToolSet } from "@/types/case";
+import type {
+  BriefItem,
+  CaseBlock,
+  CaseStudy,
+  CompanyInfo,
+  ToolSet,
+} from "@/types/case";
 import clsx from "clsx";
 import Image from "next/image";
 
@@ -60,7 +66,7 @@ function AboutList({
   items,
 }: {
   title: string;
-  items: { id: number; discription: string }[];
+  items?: BriefItem[];
 }) {
   if (!items?.length) return null;
   return (
@@ -146,8 +152,8 @@ export default function CaseStudyLayout({
           <div className="flex flex-col gap-8 flex-1 md:max-w-[38ch]">
             <CompanyBlock company={data.company} />
             <ToolsBlock tools={data.tools} />
-            <AboutList title="Omschrijving" items={data.omschrijving as any} />
-            <AboutList title="De uitdagingen" items={data.uitdagingen as any} />
+            <AboutList title="Omschrijving" items={data.omschrijving} />
+            <AboutList title="De uitdagingen" items={data.uitdagingen} />
           </div>
 
           {data.image && (

@@ -13,14 +13,21 @@ export default function Contact() {
     extraInfo: "",
   });
 
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const websiteGoalRef = useRef<HTMLInputElement>(null);
+  const keyFeaturesRef = useRef<HTMLInputElement>(null);
+  const timelineRef = useRef<HTMLInputElement>(null);
+  const extraInfoRef = useRef<HTMLInputElement>(null);
+
   const inputRefs = {
-    name: useRef<HTMLInputElement>(null),
-    email: useRef<HTMLInputElement>(null),
-    websiteGoal: useRef<HTMLInputElement>(null),
-    keyFeatures: useRef<HTMLInputElement>(null),
-    timeline: useRef<HTMLInputElement>(null),
-    extraInfo: useRef<HTMLInputElement>(null),
-  };
+    name: nameRef,
+    email: emailRef,
+    websiteGoal: websiteGoalRef,
+    keyFeatures: keyFeaturesRef,
+    timeline: timelineRef,
+    extraInfo: extraInfoRef,
+  } as const;
 
   const validateForm = () => {
     let isValid = true;
@@ -94,7 +101,7 @@ export default function Contact() {
                 type="text"
                 name="name"
                 placeholder="Naam"
-                ref={inputRefs.name}
+                ref={nameRef}
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -106,7 +113,7 @@ export default function Contact() {
                 type="email"
                 name="email"
                 placeholder="Mail"
-                ref={inputRefs.email}
+                ref={emailRef}
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -119,7 +126,7 @@ export default function Contact() {
               type="text"
               name="websiteGoal"
               placeholder="Wat is het doel van de website"
-              ref={inputRefs.websiteGoal}
+              ref={websiteGoalRef}
               value={formData.websiteGoal}
               onChange={handleChange}
               required
@@ -131,7 +138,7 @@ export default function Contact() {
               type="text"
               name="keyFeatures"
               placeholder="Belangrijkste functies (Zoals inloggen, blogs of beheeromgeving)"
-              ref={inputRefs.keyFeatures}
+              ref={keyFeaturesRef}
               value={formData.keyFeatures}
               onChange={handleChange}
               required
@@ -143,7 +150,7 @@ export default function Contact() {
               type="text"
               name="timeline"
               placeholder="Wat is de verwachte tijdslijn van het project"
-              ref={inputRefs.timeline}
+              ref={timelineRef}
               value={formData.timeline}
               onChange={handleChange}
               required
@@ -155,7 +162,7 @@ export default function Contact() {
               type="text"
               name="extraInfo"
               placeholder="Extra informatie (optioneel)"
-              ref={inputRefs.extraInfo}
+              ref={extraInfoRef}
               value={formData.extraInfo}
               onChange={handleChange}
             />
