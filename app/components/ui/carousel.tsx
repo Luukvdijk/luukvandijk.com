@@ -198,14 +198,17 @@ const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel();
+  const { scrollPrev, canScrollPrev } = useCarousel();
 
   return (
     <Button
       ref={ref}
       variant={variant}
       size={size}
-      className="p-2 sm:p-4 bg-white opacity-50 w-fit h-fit rounded-full"
+      className={cn(
+        "p-2 sm:p-4 bg-white opacity-50 w-fit h-fit rounded-full",
+        className
+      )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
@@ -220,14 +223,17 @@ const CarouselNext = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollNext, canScrollNext } = useCarousel();
+  const { scrollNext, canScrollNext } = useCarousel();
 
   return (
     <Button
       ref={ref}
       variant={variant}
       size={size}
-      className="p-2 sm:p-4 bg-white opacity-50 w-fit h-fit rounded-full"
+      className={cn(
+        "p-2 sm:p-4 bg-white opacity-50 w-fit h-fit rounded-full",
+        className
+      )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}

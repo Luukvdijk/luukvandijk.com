@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 
 import { Button } from "./ui/button";
 
@@ -19,29 +19,30 @@ const consentPayload = (state: Exclude<ConsentState, null>) => ({
 });
 
 export function AnalyticsConsent() {
-  const [consent, setConsent] = useState<ConsentState>(null);
-  const [ready, setReady] = useState(false);
+  const [localConsent, setLocalConsent] = useState<ConsentState>(null);
 
-  useEffect(() => {
-    const stored =
-      typeof window !== "undefined" ? localStorage.getItem(STORAGE_KEY) : null;
+  const storedConsent = useSyncExternalStore(
+    () => () => {},
+    (): ConsentState => {
+      if (typeof window === "undefined") return null;
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored === "granted" || stored === "denied" ? stored : null;
+    },
+    (): ConsentState => null
+  );
 
-    if (stored === "granted" || stored === "denied") {
-      setConsent(stored);
-    }
-    setReady(true);
-  }, []);
+  const consent = localConsent ?? storedConsent;
 
   const handleChoice = (state: Exclude<ConsentState, null>) => {
     localStorage.setItem(STORAGE_KEY, state);
-    setConsent(state);
+    setLocalConsent(state);
 
     if (typeof window !== "undefined" && typeof window.gtag === "function") {
       window.gtag("consent", "update", consentPayload(state));
     }
   };
 
-  const showBanner = ready && consent === null;
+  const showBanner = consent === null;
 
   const consentScripts = useMemo(() => {
     if (consent !== "granted") return null;
