@@ -1,6 +1,7 @@
 type JsonLdProps = {
   data: unknown;
   id?: string;
+  nonce?: string;
 };
 
 function serializeJsonLd(data: unknown) {
@@ -12,12 +13,10 @@ function serializeJsonLd(data: unknown) {
     .replace(/\u2029/g, "\\u2029");
 }
 
-export default function JsonLd({ data, id }: JsonLdProps) {
+export default function JsonLd({ data, id, nonce }: JsonLdProps) {
   return (
-    <script
-      id={id}
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }}
-    />
+    <script id={id} type="application/ld+json" nonce={nonce}>
+      {serializeJsonLd(data)}
+    </script>
   );
 }
