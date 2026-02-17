@@ -1,6 +1,7 @@
 import { buildLinkedGraphJsonLd } from "@/lib/json-ld";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { headers } from "next/headers";
 import { AnalyticsConsent } from "./components/AnalyticsConsent";
 import Footer from "./components/Footer";
 import JsonLd from "./components/JsonLd";
@@ -17,15 +18,17 @@ export const metadata: Metadata = {
   ),
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <html lang="en">
       <head>
-        <JsonLd data={buildLinkedGraphJsonLd()} />
+        <JsonLd data={buildLinkedGraphJsonLd()} nonce={nonce} />
       </head>
       <body>
         <ScrollProvider>
@@ -33,7 +36,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ScrollProvider>
-        <AnalyticsConsent />
+        <AnalyticsConsent nonce={nonce} />
         <Analytics />
       </body>
     </html>

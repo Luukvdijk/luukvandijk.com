@@ -18,7 +18,11 @@ const consentPayload = (state: Exclude<ConsentState, null>) => ({
   analytics_storage: state,
 });
 
-export function AnalyticsConsent() {
+type AnalyticsConsentProps = {
+  nonce?: string;
+};
+
+export function AnalyticsConsent({ nonce }: AnalyticsConsentProps) {
   const [localConsent, setLocalConsent] = useState<ConsentState>(null);
 
   const storedConsent = useSyncExternalStore(
@@ -52,8 +56,9 @@ export function AnalyticsConsent() {
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
+          nonce={nonce}
         />
-        <Script id="ga-setup" strategy="afterInteractive">
+        <Script id="ga-setup" strategy="afterInteractive" nonce={nonce}>
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent', 'default', ${JSON.stringify(consentPayload("granted"))});
@@ -63,7 +68,7 @@ gtag('config', '${GA_MEASUREMENT_ID}');
         </Script>
       </>
     );
-  }, [consent]);
+  }, [consent, nonce]);
 
   return (
     <>
