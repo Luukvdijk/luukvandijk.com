@@ -7,9 +7,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
+import { fetchDashboardTestimonials, type Testimonial } from "../../lib/testimonials";
 
-const Review = () => {
-  const reviews = [
+const Review = async () => {
+  const hardcoded: Testimonial[] = [
     {
       id: 1,
       review:
@@ -27,6 +28,8 @@ const Review = () => {
       place: "Oprichter BuurBak",
     },
   ];
+
+  const reviews = [...hardcoded, ...(await fetchDashboardTestimonials())];
 
   return (
     <div className="w-full h-fit px-8 pb-8 flex flex-col gap-10">
