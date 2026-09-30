@@ -7,6 +7,9 @@ import Review from "./components/Review";
 import ScrollableSection from "./components/ScrollableSection";
 import Steps from "./components/Steps";
 
+// Revalidate hourly so dashboard testimonials refresh even if the fetch was skipped at build time.
+export const revalidate = 3600;
+
 export const metadata = constructMetadata({
   title: "Webdesign, Development & Hosting | Luuk van Dijk",
   description:
