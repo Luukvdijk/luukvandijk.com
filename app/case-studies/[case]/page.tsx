@@ -52,8 +52,8 @@ export default async function CasePage({ params }: PageProps) {
     description: data.seo?.description ?? data.summary,
     image: data.seo?.image ?? data.image,
     keywords: data.techStack, // optional, but helpful for Google’s context
-    datePublished: "2025-02-01", // set realistic dates later
-    dateModified: "2025-06-01",
+    datePublished: data.publishedAt ?? "2025-02-01", // set realistic dates later
+    dateModified: data.updatedAt ?? "2025-06-01",
   });
 
   const breadcrumbsLd = buildBreadcrumbJsonLd(site, [
@@ -70,7 +70,15 @@ export default async function CasePage({ params }: PageProps) {
             <span className="text-[#EE7B46]">Bak</span> heb gecreëerd en opgezet
           </>
         )
-      : undefined;
+      : slug === "jametanouk"
+        ? () => (
+            <>
+              Hoe ik JA! met{" "}
+              <span className="italic text-[#E07A6A]">Anouk</span> heb
+              gecreëerd en opgezet
+            </>
+          )
+        : undefined;
 
   return (
     <>

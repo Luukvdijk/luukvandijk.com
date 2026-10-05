@@ -225,4 +225,118 @@ export const cases: CaseStudy[] = [
       },
     ],
   },
+
+  {
+    id: 3,
+    slug: "jametanouk",
+    title: "JA! met Anouk",
+    description:
+      "Een persoonlijke website voor een zelfstandig trouwambtenaar in het Gooi.",
+    summary:
+      "Voor JA! met Anouk ontwierp en bouwde ik de volledige website van een zelfstandig trouwambtenaar. Binnen een dag stond er een coming soon pagina in de definitieve huisstijl, daarna groeide de site uit tot een complete, vindbare website met pakketten, een contactformulier met eigen animatie en alles wat juridisch nodig is.",
+    themeColor: "#F6E3DF",
+    image: "/images/jametanouk/cover.jpg",
+    publishedAt: "2026-09-21",
+    updatedAt: "2026-10-05",
+
+    seo: {
+      title: "JA! met Anouk – Case Study",
+      description:
+        "Hoe ik voor een zelfstandig trouwambtenaar een persoonlijke, lokaal vindbare website ontwierp en bouwde met Next.js: van coming soon pagina in één dag tot livegang op jametanouk.nl.",
+      image: "/og/jametanouk.jpg",
+      keywords: [
+        "JA! met Anouk",
+        "trouwambtenaar website",
+        "Next.js",
+        "Resend",
+        "Lokale SEO",
+        "Webdesign",
+        "Case study",
+      ],
+      hiddenH1:
+        "JA! met Anouk: case study van Luuk van Dijk (webdeveloper & designer)",
+      hiddenIntro:
+        "Ik ontwierp en bouwde de website van trouwambtenaar JA! met Anouk, met een persoonlijke uitstraling, een contactformulier dat ja zegt en een sterke focus op lokale vindbaarheid en privacy.",
+    },
+
+    company: [
+      {
+        id: 3,
+        cat: "Trouwambtenaar & ceremoniespreker",
+        plaats: "Het Gooi, Nederland",
+        employess: "Zelfstandig ondernemer",
+        founded: "Online sinds 2026",
+      },
+    ],
+    tools: [
+      {
+        id: 3,
+        point1: "NextJs (Development)",
+        point2: "Resend (E-mail)",
+        point3: "Cloudflare Turnstile (Spambeveiliging)",
+        point4: "Vitest (Testen)",
+        point5: "Google Analytics (Statistieken)",
+        point6: "Vercel (Hosting)",
+      },
+    ],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Resend",
+      "Cloudflare Turnstile",
+      "Vitest",
+      "Vercel",
+    ],
+    duration: "Juli – September 2026",
+    roles: ["Designer", "Full-stack Developer"],
+
+    blocks: [
+      {
+        id: "jametanouk-1",
+        type: "research",
+        title: "Onderzoek & concept",
+        text: "Anouk startte als zelfstandig trouwambtenaar in het Gooi. Haar werk draait om vertrouwen: stellen kiezen iemand die hun verhaal mag vertellen op de belangrijkste dag van hun leven. Een standaard template-site zou dat nooit overbrengen. Tegelijk wilde ze meteen online zichtbaar zijn, terwijl de teksten, pakketten en juridische zaken nog in beweging waren. Daarom koos ik voor twee stappen: eerst binnen een dag een coming soon pagina in de definitieve huisstijl, zodat het domein live stond en Anouk het al kon delen via WhatsApp en Instagram. Daarna de volledige site, gebouwd rond haar werkwijze en drie duidelijke pakketten.",
+      },
+      {
+        id: "jametanouk-2",
+        type: "design",
+        title: "Ontwerp",
+        text: "De stijl moest warm en persoonlijk voelen, niet zakelijk. Ik koos een donkere espresso-achtergrond met een roze accent, het serif-lettertype Fraunces met schuingedrukte accenten en Jost voor de kleine labels. Rustige scroll-animaties laten de inhoud zacht binnenkomen. De homepage volgt de vragen die een stel heeft: wie is Anouk, hoe werkt ze, welk pakket past bij ons en hoe nemen we contact op. Elk pakket linkt direct naar het contactformulier, met dat pakket al ingevuld.",
+        image: "/images/jametanouk/pakketten.jpg",
+        imageAlt: "De drie pakketten van JA! met Anouk op desktop",
+      },
+      {
+        id: "jametanouk-3",
+        type: "development",
+        title: "Ontwikkeling",
+        text: "De site is gebouwd met Next.js en TypeScript en draait op Vercel. Het contactformulier verstuurt via een server action en Resend een eigen HTML-mail in de huisstijl. Bij versturen tekenen twee trouwringen zich in elkaar, met de bevestiging “Het is een JA!”. Het formulier is beschermd met Cloudflare Turnstile, een honeypot en rate limiting, en afgedekt met tests in Vitest. Voor vindbaarheid voegde ik structured data toe (LocalBusiness en Person, gericht op Bussum, Naarden, Hilversum en de rest van het Gooi), een sitemap, een llms.txt met veelgestelde vragen voor AI-zoekmachines en een eigen OG-afbeelding. Google Analytics laadt pas na toestemming, via een cookiebanner met de vraag “Ik zeg JA! tegen cookies?”.",
+      },
+      {
+        id: "jametanouk-4",
+        type: "testing",
+        title: "Testen & itereren",
+        text: "Elke wijziging controleerde ik op desktop en mobiel, en voor de livegang deed ik een Lighthouse-ronde: 100 voor toegankelijkheid, best practices en SEO, en 99 voor performance op desktop. Tijdens het testen kwamen kleine dingen boven die echte aanvragen hadden kunnen kosten. Een WhatsApp-preview liet geen afbeelding zien omdat de foto te zwaar was. Ankerlinks in het menu sprongen niet naar hun sectie. En bij bezoekers met een adblocker bleef de verstuurknop uitgeschakeld, omdat de spamcheck nooit laadde. Nu komt de knop na een paar seconden alsnog vrij, zodat er geen aanvraag verloren gaat.",
+        image: "/images/jametanouk/mobiel.jpg",
+        imageAlt: "JA! met Anouk op mobiel: homepage, werkwijze en contact",
+      },
+      {
+        id: "jametanouk-5",
+        type: "collaboration",
+        title: "Mijn rol & samenwerking",
+        text: "Ik deed het project alleen: ontwerp, development, hosting en de juridische pagina’s. Anouk is niet technisch, dus feedback kwam binnen via Word-documenten en WhatsApp-berichten. Die verwerkte ik in rondes, van ik-vorm in alle teksten tot het consequent schrijven van de merknaam “JA!”. Ook stelde ik een privacyverklaring en algemene voorwaarden op in haar eigen toon, en maakte ik een factuursjabloon in dezelfde huisstijl.",
+      },
+      {
+        id: "jametanouk-6",
+        type: "result",
+        title: "Resultaat",
+        text: "JA! met Anouk staat live op jametanouk.nl. De site laat zien wie Anouk is en hoe ze werkt, stellen kunnen direct een kennismaking aanvragen en aanvragen komen netjes binnen in haar mailbox. Dankzij de structured data en de lokale focus is de site klaar om gevonden te worden door stellen in het Gooi, zowel via Google als via AI-zoekmachines.",
+      },
+      {
+        id: "jametanouk-7",
+        type: "reflection",
+        title: "Reflectie",
+        text: "Dit project liet me zien hoe waardevol het is om iets kleins vroeg live te zetten. De coming soon pagina gaf Anouk direct een plek online, terwijl de rest rustig kon groeien. Ik leerde ook dat een klant niet technisch hoeft te zijn: Word-documenten en WhatsApp-berichten zijn prima input, zolang ik elke ronde zelf controleer. En vooral dat kleine details bij een klein bedrijf het verschil maken. Een preview die niet laadt of een knop die niet werkt kost bij een grote site een paar procent, bij een zelfstandige ondernemer kan het een complete bruiloft zijn.",
+      },
+    ],
+  },
 ];
